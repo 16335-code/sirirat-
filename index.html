@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -18,119 +19,105 @@ font-family:'Segoe UI',sans-serif;
 body{
 height:100vh;
 overflow:hidden;
-background:linear-gradient(180deg,#87CEFA,#B0E0E6,#E0FFFF);
+background:linear-gradient(135deg,#87CEFA,#B0E0E6,#E0FFFF);
+background-size:400% 400%;
+animation:bg 10s ease infinite;
+}
+
+@keyframes bg{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+nav{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+display:flex;
+justify-content:center;
+gap:30px;
+padding:20px;
+background:rgba(255,255,255,.25);
+backdrop-filter:blur(10px);
+z-index:1000;
+}
+
+nav a{
+text-decoration:none;
+color:white;
+font-size:20px;
+font-weight:bold;
+transition:.3s;
+}
+
+nav a:hover{
+color:#003366;
+transform:scale(1.15);
+}
+
+.container{
+height:100vh;
 display:flex;
 justify-content:center;
 align-items:center;
-position:relative;
-}
-
-/* กล่องหลัก */
-
-.container{
-
-width:80%;
-max-width:900px;
-background:rgba(255,255,255,0.2);
-backdrop-filter:blur(10px);
-border-radius:25px;
-padding:40px;
+flex-direction:column;
 text-align:center;
-box-shadow:0 10px 30px rgba(0,0,0,0.2);
-z-index:10;
-
+color:white;
 }
 
-/* หัวข้อ */
+img{
+width:220px;
+height:220px;
+border-radius:50%;
+border:7px solid white;
+object-fit:cover;
+box-shadow:0 0 30px white;
+margin-bottom:20px;
+}
 
 h1{
-
-font-size:45px;
-color:white;
-text-shadow:2px 2px 5px gray;
-
-}
-
-h2{
-
-color:white;
-margin-top:10px;
-
+font-size:50px;
+text-shadow:3px 3px 10px #00000055;
 }
 
 p{
-
 font-size:22px;
-color:white;
 margin-top:10px;
-
 }
 
-/* เมนู */
-
-.menu{
-
-margin-top:40px;
-display:flex;
-justify-content:center;
-gap:20px;
-flex-wrap:wrap;
-
-}
-
-.menu a{
-
-text-decoration:none;
-padding:15px 30px;
+.btn{
+margin-top:30px;
+padding:15px 35px;
 background:white;
-color:#3498db;
-font-weight:bold;
+color:#2196F3;
+text-decoration:none;
 border-radius:40px;
-transition:0.4s;
-font-size:18px;
-box-shadow:0 5px 15px rgba(0,0,0,.2);
-
+font-size:20px;
+font-weight:bold;
+transition:.3s;
 }
 
-.menu a:hover{
-
-background:#3498db;
+.btn:hover{
+background:#2196F3;
 color:white;
-transform:translateY(-8px) scale(1.05);
-
+transform:scale(1.1);
 }
-
-/* หิมะ */
 
 .snow{
 position:absolute;
 top:-10px;
-color:white;
-user-select:none;
-animation:snow linear infinite;
+background:white;
+border-radius:50%;
+opacity:.8;
+animation:fall linear infinite;
 }
 
-@keyframes snow{
-
-0%{
-transform:translateY(-10px);
-opacity:1;
-}
-
-100%{
+@keyframes fall{
+to{
 transform:translateY(110vh);
-opacity:0;
-
 }
-
-}
-
-footer{
-
-margin-top:40px;
-color:white;
-font-size:18px;
-
 }
 
 </style>
@@ -139,23 +126,51 @@ font-size:18px;
 
 <body>
 
-<!-- หิมะ -->
+<nav>
+
+<a href="index.html">🏠 หน้าแรก</a>
+
+<a href="about.html">👤 ประวัติส่วนตัว</a>
+
+<a href="sop.html">📝 SOP</a>
+
+<a href="portfolio.html">🏆 ผลงาน</a>
+
+<a href="contact.html">📞 ติดต่อ</a>
+
+</nav>
+
+<div class="container">
+
+<img src="me.jpg">
+
+<h1>นางสาวศิริรัตน์ ยอดสร้อย</h1>
+
+<p>นักเรียนชั้นมัธยมศึกษาปีที่ 6/1</p>
+
+<p>โรงเรียนพานทอง</p>
+
+<a href="about.html" class="btn">เข้าสู่ Portfolio</a>
+
+</div>
 
 <script>
 
-for(let i=0;i<80;i++){
+for(let i=0;i<120;i++){
 
 let snow=document.createElement("div");
 
 snow.className="snow";
 
-snow.innerHTML="❄";
-
 snow.style.left=Math.random()*100+"vw";
 
-snow.style.fontSize=(10+Math.random()*25)+"px";
+let size=Math.random()*8+2;
 
-snow.style.animationDuration=(5+Math.random()*10)+"s";
+snow.style.width=size+"px";
+
+snow.style.height=size+"px";
+
+snow.style.animationDuration=Math.random()*5+5+"s";
 
 snow.style.animationDelay=Math.random()*5+"s";
 
@@ -165,35 +180,6 @@ document.body.appendChild(snow);
 
 </script>
 
-<div class="container">
-
-<h1>Portfolio</h1>
-
-<h2>นางสาวศิริรัตน์ ยอดสร้อย</h2>
-
-<p>ชั้นมัธยมศึกษาปีที่ 6/1</p>
-
-<p>โรงเรียนพานทอง</p>
-
-<div class="menu">
-
-<a href="profile.html">👩 ประวัติส่วนตัว</a>
-
-<a href="sop.html">📖 SOP</a>
-
-<a href="portfolio.html">🏆 ผลงาน</a>
-
-<a href="contact.html">📱 ช่องทางติดต่อ</a>
-
-</div>
-
-<footer>
-
-❄ Welcome To My Portfolio ❄
-
-</footer>
-
-</div>
-
 </body>
+
 </html>
