@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ประวัติส่วนตัว | Portfolio ศิริรัตน์</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#87CEFA,#B0E0E6,#E0FFFF);
+background-size:400% 400%;
+animation:bg 10s ease infinite;
+overflow-x:hidden;
+color:white;
+}
+
+@keyframes bg{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+nav{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+display:flex;
+justify-content:center;
+gap:30px;
+padding:18px;
+background:rgba(255,255,255,.2);
+backdrop-filter:blur(12px);
+z-index:1000;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+font-size:18px;
+font-weight:bold;
+transition:.3s;
+}
+
+nav a:hover{
+color:#003366;
+transform:scale(1.1);
+}
+
+.container{
+max-width:1000px;
+margin:120px auto 50px;
+padding:30px;
+}
+
+.card{
+background:rgba(255,255,255,.2);
+backdrop-filter:blur(15px);
+border-radius:25px;
+padding:40px;
+box-shadow:0 10px 30px rgba(0,0,0,.2);
+text-align:center;
+}
+
+img{
+width:220px;
+height:220px;
+border-radius:50%;
+object-fit:cover;
+border:7px solid white;
+box-shadow:0 0 25px white;
+margin-bottom:25px;
+}
+
+h1{
+font-size:42px;
+margin-bottom:10px;
+}
+
+h2{
+margin-top:35px;
+margin-bottom:15px;
+font-size:30px;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+margin-top:20px;
+}
+
+td{
+padding:15px;
+font-size:20px;
+border-bottom:1px solid rgba(255,255,255,.3);
+text-align:left;
+}
+
+.skill{
+display:inline-block;
+padding:10px 20px;
+margin:8px;
+background:white;
+color:#2196F3;
+border-radius:30px;
+font-weight:bold;
+}
+
+.snow{
+position:fixed;
+top:-10px;
+background:white;
+border-radius:50%;
+animation:fall linear infinite;
+opacity:.8;
+}
+
+@keyframes fall{
+to{
+transform:translateY(110vh);
+}
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav>
+
+<a href="index.html">🏠 หน้าแรก</a>
+<a href="about.html">👤 ประวัติส่วนตัว</a>
+<a href="sop.html">📝 SOP</a>
+<a href="portfolio.html">🏆 ผลงาน</a>
+<a href="contact.html">📞 ติดต่อ</a>
+
+</nav>
+
+<div class="container">
+
+<div class="card">
+
+<img src="me.jpg" alt="รูปภาพ">
+
+<h1>นางสาวศิริรัตน์ ยอดสร้อย</h1>
+
+<p style="font-size:22px;">นักเรียนชั้นมัธยมศึกษาปีที่ 6/1</p>
+
+<h2>ข้อมูลส่วนตัว</h2>
+
+<table>
+
+<tr>
+<td><b>ชื่อ-สกุล</b></td>
+<td>นางสาวศิริรัตน์ ยอดสร้อย</td>
+</tr>
+
+<tr>
+<td><b>ชื่อเล่น</b></td>
+<td>....................</td>
+</tr>
+
+<tr>
+<td><b>วันเกิด</b></td>
+<td>....................</td>
+</tr>
+
+<tr>
+<td><b>อายุ</b></td>
+<td>....................</td>
+</tr>
+
+<tr>
+<td><b>โรงเรียน</b></td>
+<td>โรงเรียนพานทอง</td>
+</tr>
+
+<tr>
+<td><b>แผนการเรียน</b></td>
+<td>....................</td>
+</tr>
+
+<tr>
+<td><b>คติประจำใจ</b></td>
+<td>"ความพยายามไม่เคยทรยศคนที่ตั้งใจ"</td>
+</tr>
+
+</table>
+
+<h2>ความสามารถ</h2>
+
+<div class="skill">💻 HTML</div>
+<div class="skill">🎨 CSS</div>
+<div class="skill">📄 Microsoft Word</div>
+<div class="skill">📊 PowerPoint</div>
+<div class="skill">🌱 รักธรรมชาติ</div>
+
+</div>
+
+</div>
+
+<script>
+
+for(let i=0;i<120;i++){
+
+let snow=document.createElement("div");
+
+snow.className="snow";
+
+snow.style.left=Math.random()*100+"vw";
+
+let size=Math.random()*8+2;
+
+snow.style.width=size+"px";
+snow.style.height=size+"px";
+
+snow.style.animationDuration=Math.random()*5+5+"s";
+
+snow.style.animationDelay=Math.random()*5+"s";
+
+document.body.appendChild(snow);
+
+}
+
+</script>
+
+</body>
+
+</html>
