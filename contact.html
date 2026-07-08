@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ช่องทางติดต่อ | Portfolio ศิริรัตน์</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#87CEFA,#B0E0E6,#E0FFFF);
+background-size:400% 400%;
+animation:bg 10s ease infinite;
+overflow-x:hidden;
+color:white;
+}
+
+@keyframes bg{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+nav{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+display:flex;
+justify-content:center;
+gap:30px;
+padding:18px;
+background:rgba(255,255,255,.2);
+backdrop-filter:blur(12px);
+z-index:999;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+font-size:18px;
+font-weight:bold;
+transition:.3s;
+}
+
+nav a:hover{
+color:#003366;
+transform:scale(1.1);
+}
+
+.container{
+max-width:900px;
+margin:120px auto 50px;
+padding:20px;
+}
+
+.card{
+background:rgba(255,255,255,.2);
+backdrop-filter:blur(15px);
+border-radius:25px;
+padding:40px;
+box-shadow:0 10px 30px rgba(0,0,0,.2);
+text-align:center;
+}
+
+h1{
+font-size:45px;
+margin-bottom:10px;
+}
+
+.line{
+width:120px;
+height:5px;
+background:white;
+margin:15px auto 35px;
+border-radius:10px;
+}
+
+.contact-box{
+display:flex;
+align-items:center;
+justify-content:space-between;
+background:rgba(255,255,255,.15);
+padding:18px 25px;
+margin:18px 0;
+border-radius:18px;
+transition:.3s;
+}
+
+.contact-box:hover{
+transform:translateX(8px);
+background:rgba(255,255,255,.3);
+}
+
+.label{
+font-size:22px;
+font-weight:bold;
+}
+
+.value{
+font-size:20px;
+}
+
+.value a{
+color:white;
+text-decoration:none;
+}
+
+.value a:hover{
+text-decoration:underline;
+}
+
+.qr{
+margin-top:35px;
+}
+
+.qr img{
+width:180px;
+height:180px;
+border-radius:20px;
+border:5px solid white;
+object-fit:cover;
+box-shadow:0 0 20px rgba(255,255,255,.8);
+}
+
+.home{
+display:inline-block;
+margin-top:35px;
+padding:15px 35px;
+background:white;
+color:#2196F3;
+text-decoration:none;
+font-size:20px;
+font-weight:bold;
+border-radius:40px;
+transition:.3s;
+}
+
+.home:hover{
+background:#2196F3;
+color:white;
+}
+
+.snow{
+position:fixed;
+top:-10px;
+background:white;
+border-radius:50%;
+opacity:.8;
+animation:fall linear infinite;
+}
+
+@keyframes fall{
+to{
+transform:translateY(110vh);
+}
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav>
+
+<a href="index.html">🏠 หน้าแรก</a>
+<a href="about.html">👤 ประวัติส่วนตัว</a>
+<a href="sop.html">📝 SOP</a>
+<a href="portfolio.html">🏆 ผลงาน</a>
+<a href="contact.html">📞 ติดต่อ</a>
+
+</nav>
+
+<div class="container">
+
+<div class="card">
+
+<h1>📞 ช่องทางติดต่อ</h1>
+
+<div class="line"></div>
+
+<div class="contact-box">
+<div class="label">📘 Facebook</div>
+<div class="value">
+<a href="https://facebook.com/ชื่อของคุณ" target="_blank">
+Sirirat Yodsoi
+</a>
+</div>
+</div>
+
+<div class="contact-box">
+<div class="label">📷 Instagram</div>
+<div class="value">
+<a href="https://instagram.com/ชื่อผู้ใช้" target="_blank">
+@sixzrattt._
+</a>
+</div>
+</div>
+
+<div class="contact-box">
+<div class="label">📧 Email</div>
+<div class="value">
+yourname@email.com
+</div>
+</div>
+
+<div class="contact-box">
+<div class="label">📱 โทรศัพท์</div>
+<div class="value">
+08X-XXX-XXXX
+</div>
+</div>
+
+<div class="contact-box">
+<div class="label">📍 โรงเรียน</div>
+<div class="value">
+โรงเรียนพานทอง
+</div>
+</div>
+
+<div class="qr">
+<p style="margin-bottom:15px;font-size:22px;">สแกน QR Code เพื่อติดต่อ</p>
+<img src="qrcode.png" alt="QR Code">
+</div>
+
+<a href="index.html" class="home">⬅ กลับหน้าแรก</a>
+
+</div>
+
+</div>
+
+<script>
+
+for(let i=0;i<120;i++){
+
+let snow=document.createElement("div");
+
+snow.className="snow";
+
+snow.style.left=Math.random()*100+"vw";
+
+let size=Math.random()*8+2;
+
+snow.style.width=size+"px";
+snow.style.height=size+"px";
+
+snow.style.animationDuration=(Math.random()*5+5)+"s";
+snow.style.animationDelay=(Math.random()*5)+"s";
+
+document.body.appendChild(snow);
+
+}
+
+</script>
+
+</body>
+</html>
